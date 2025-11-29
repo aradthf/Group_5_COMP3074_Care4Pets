@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:orientation="vertical"
+    android:background="#F7FDFB">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert" />
+
+    <TextView
+        android:id="@+id/tvTitleHealthRecords"
+        android:text="Health Records"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#1F2B3A"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Dummy record -->
+    <LinearLayout
+        android:layout_below="@id/tvTitleHealthRecords"
+        android:background="@drawable/bg_card_gradient"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Vaccination"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#1F2B3A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Last visit: Aug 2024"
+            android:layout_marginTop="6dp"
+            android:textColor="#445566"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddHealthRecord"
+        style="@style/PrimaryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Add Health Record" />
+
+</RelativeLayout>

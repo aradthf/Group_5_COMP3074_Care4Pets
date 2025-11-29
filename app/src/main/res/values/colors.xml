@@ -1,0 +1,19 @@
+<resources>
+
+    <color name="colorPrimary">#2A9D8F</color>
+    <color name="colorPrimaryDark">#1E6F66</color>
+    <color name="colorAccent">#E76F51</color>
+
+    <!-- Backgrounds -->
+    <color name="app_background">#F4F9FD</color>
+    <color name="card_background">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#1B1B1B</color>
+    <color name="text_secondary">#555555</color>
+    <color name="text_muted">#888888</color>
+
+    <!-- Misc -->
+    <color name="divider">#DDDDDD</color>
+    <color name="error_red">#D62828</color>
+</resources>
