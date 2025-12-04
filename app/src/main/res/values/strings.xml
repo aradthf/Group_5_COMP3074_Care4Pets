@@ -3,4 +3,11 @@
     <string name="add_health_record">Add Health Record</string>
     <string name="record_title">Record Title</string>
     <string name="save">Save</string>
+    <string name="last_visit_dummy">Last visit: Aug 2024</string>
+    <string name="record_type_dummy">Vaccination</string>
+    <string name="health_records_activity_title">Health Records</string>
+    <string name="add_health_record_btn">Add Health Record</string>
+    <string name="care_instructions_activity_title">Care Instructions</string>
+    <string name="care_instructions_dummy_1">• Feed twice daily</string>
+    <string name="care_instructions_dummy_2">• Walk for 30 minutes</string>
 </resources>

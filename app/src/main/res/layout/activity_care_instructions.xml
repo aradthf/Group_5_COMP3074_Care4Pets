@@ -15,7 +15,7 @@
 
     <TextView
         android:id="@+id/tvTitleCareInstructions"
-        android:text="Care Instructions"
+        android:text="@string/care_instructions_activity_title"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#1F2B3A"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:text="• Feed twice daily"
+            android:text="@string/care_instructions_dummy_1"
             android:textSize="16sp"
             android:textColor="#1F2B3A"
             android:layout_marginBottom="8dp"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:text="• Walk for 30 minutes"
+            android:text="@string/care_instructions_dummy_2"
             android:textSize="16sp"
             android:textColor="#1F2B3A"
             android:layout_width="wrap_content"
