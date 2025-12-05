@@ -19,7 +19,7 @@ public class CareInstructionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_care_instructions);
         RecyclerView recyclerView = findViewById(R.id.rvCareInstructions);
 
-        CareInstructions care = new CareInstructions();
+        CareInstructions care = FakeRepository.careInstructions;
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

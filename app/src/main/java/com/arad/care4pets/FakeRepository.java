@@ -9,6 +9,7 @@ public class FakeRepository {
     public static final List<Reminder> reminders = new ArrayList<>();
 
     public static final List<HealthRecord> records = new ArrayList<>();
+    public static final CareInstructions careInstructions = new CareInstructions();
 
 
     static {
