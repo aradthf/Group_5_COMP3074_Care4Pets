@@ -10,6 +10,7 @@
     <string name="care_instructions_activity_title">Care Instructions</string>
     <string name="care_instructions_dummy_1">• Feed twice daily</string>
     <string name="care_instructions_dummy_2">• Walk for 30 minutes</string>
+    <string name="description">Description</string>
     <string name="back">Back</string>
     <string name="reminder_icon">Reminder Icon</string>
     <string name="repeat_reminder">Repeat Reminder</string>
