@@ -83,12 +83,13 @@ Dashboard cards navigate correctly.
 PetsList shows data from Repository.
 
 
-### **Niaj – Pet profile + Health records**
+### **Niaj – Pet profile + Reminders**
 Show selected pet details.
 Simple list of health records.
 
 
-### **Brian – Reminders + Care instructions**
-List of reminders.
-Ability to add a new reminder 
-Static care tips text screen.
+### **Brian – Health Records + Care instructions**
+Ability to add a new health record
+Simple list of health records.
+Dynamic care tips text screen.
+Ability to add new Care Instructions
