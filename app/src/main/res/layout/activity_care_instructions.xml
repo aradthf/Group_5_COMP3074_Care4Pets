@@ -24,28 +24,36 @@
         android:layout_height="wrap_content"/>
 
     <LinearLayout
-        android:layout_below="@id/tvTitleCareInstructions"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_card_gradient"
-        android:padding="20dp"
-        android:orientation="vertical"
+        android:id="@+id/addInstructionLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="12dp">
 
-        <TextView
-            android:text="@string/care_instructions_dummy_1"
-            android:textSize="16sp"
-            android:textColor="#1F2B3A"
-            android:layout_marginBottom="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/etInstruction"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Add new instruction"/>
 
-        <TextView
-            android:text="@string/care_instructions_dummy_2"
-            android:textSize="16sp"
-            android:textColor="#1F2B3A"
+        <Button
+            android:id="@+id/btnAddInstruction"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="Add"/>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCareInstructions"
+        android:layout_below="@id/tvTitleCareInstructions"
+        android:layout_above="@+id/addInstructionLayout"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
 
 </RelativeLayout>

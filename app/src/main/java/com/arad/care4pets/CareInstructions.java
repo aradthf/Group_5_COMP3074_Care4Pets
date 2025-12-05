@@ -11,6 +11,9 @@ public class CareInstructions {
         this.id = id;
         this.careInstructions = new ArrayList<>();
     }
+    public CareInstructions(){
+        this.careInstructions = new ArrayList<>();
+    }
 
     public int getId(){
         return id;
