@@ -89,7 +89,7 @@ Simple list of health records.
 
 
 ### **Brian – Health Records + Care instructions**
-Ability to add a new health record
+Ability to add a new health record.
 Simple list of health records.
 Dynamic care tips text screen.
-Ability to add new Care Instructions
+Ability to add new Care Instructions.
