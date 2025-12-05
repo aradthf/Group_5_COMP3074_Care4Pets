@@ -76,7 +76,7 @@ The goal of Prototype 2 is to deliver improved UI, screen navigation, and basic 
 
 ### **Shaheer – Pet Management UI**
 - My Pets layout screen  
-- Dummy data list  
+- data list  
 - Styling of card components  
 
 ### **Niaj – Reminders UI**
