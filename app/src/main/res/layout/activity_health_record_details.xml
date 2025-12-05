@@ -17,6 +17,14 @@
         android:layout_marginTop="1dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@android:drawable/ic_menu_revert" />
+    <TextView
+        android:id="@+id/tvTitleRecordDetails"
+        style="@style/TextTitle"
+        android:text="Record Details"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvComingSoon"
