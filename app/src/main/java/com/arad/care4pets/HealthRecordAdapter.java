@@ -34,8 +34,8 @@ public class HealthRecordAdapter extends RecyclerView.Adapter<HealthRecordAdapte
 
         public HealthRecordViewHolder(@NonNull View itemView){
             super(itemView);
-            tvType = itemView.findViewById(R.id.etRecordTitle);
-            tvDescription = itemView.findViewById(R.id.etRecordDescription);
+            tvType = itemView.findViewById(R.id.tvRecord);
+            tvDescription = itemView.findViewById(R.id.tvDescription);
         }
     }
 

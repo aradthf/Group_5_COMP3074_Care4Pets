@@ -1,14 +1,20 @@
 package com.arad.care4pets;
 
 public class HealthRecord {
+
+    private int id;
     private String recordType;
     private String description;
 
-    public HealthRecord(String type, String description){
+    public HealthRecord(int id, String type, String description){
+        this.id = id;
         this.recordType = type;
         this.description = description;
     }
 
+    public int getId(){
+        return id;
+    }
     public String getRecordType(){
         return recordType;
     }

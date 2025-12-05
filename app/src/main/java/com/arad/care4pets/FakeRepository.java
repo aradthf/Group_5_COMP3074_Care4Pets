@@ -8,6 +8,8 @@ public class FakeRepository {
     public static final List<Pet> pets = new ArrayList<>();
     public static final List<Reminder> reminders = new ArrayList<>();
 
+    public static final List<HealthRecord> records = new ArrayList<>();
+
     static {
         pets.add(new Pet(1, "Luna", "Dog", 3, "Allergic to chicken"));
         pets.add(new Pet(2, "Milo", "Cat", 2, "Needs eye drops"));
