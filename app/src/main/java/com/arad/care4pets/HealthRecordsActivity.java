@@ -14,7 +14,7 @@ public class HealthRecordsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health_records);
 
-        Button btnAddHealthRecord = findViewById(R.id.btnAddHealthRecord);
+        Button btnAddHealthRecord = findViewById(R.id.fabAddHealthRecord);
         ImageButton btnBack = findViewById(R.id.btnBack);
 
         btnAddHealthRecord.setOnClickListener(v -> {
