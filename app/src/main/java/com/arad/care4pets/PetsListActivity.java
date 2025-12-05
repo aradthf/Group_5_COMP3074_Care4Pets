@@ -2,6 +2,7 @@ package com.arad.care4pets;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ public class PetsListActivity extends AppCompatActivity {
         RecyclerView recycler = findViewById(R.id.rvPets);
         FloatingActionButton fabAdd = findViewById(R.id.fabAddPet);
         ImageButton btnBack = findViewById(R.id.btnBackMenu);
+        Button btnCareInstructions = findViewById(R.id.btnCareInstructions);
 
         adapter = new PetAdapter(
                 FakeRepository.pets,
@@ -40,6 +42,10 @@ public class PetsListActivity extends AppCompatActivity {
         );
 
         btnBack.setOnClickListener(v -> finish());
+        btnCareInstructions.setOnClickListener(v -> {
+            Intent intent = new Intent(this, CareInstructionsActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override

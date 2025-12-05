@@ -17,7 +17,7 @@ public class MenuActivity extends AppCompatActivity {
         Button btnMyPets = findViewById(R.id.btnMyPets);
         Button btnReminders = findViewById(R.id.btnReminders);
         Button btnHealthRecords = findViewById(R.id.btnHealthRecords);
-        Button btnCareInstructions = findViewById(R.id.btnCareInstructions);
+//        Button btnCareInstructions = findViewById(R.id.btnCareInstructions);
 
         btnDashboard.setOnClickListener(v -> {
         Intent intent = new Intent(MenuActivity.this, DashboardActivity.class);
@@ -39,9 +39,9 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     });
 
-        btnCareInstructions.setOnClickListener(v -> {
-        Intent intent = new Intent(MenuActivity.this, CareInstructionsActivity.class);
-        startActivity(intent);
-    });
+//        btnCareInstructions.setOnClickListener(v -> {
+//        Intent intent = new Intent(MenuActivity.this, CareInstructionsActivity.class);
+//        startActivity(intent);
+//    });
     }
 }
