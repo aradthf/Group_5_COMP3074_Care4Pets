@@ -27,6 +27,11 @@ public class OnboardingActivity extends AppCompatActivity {
         btnSkip = findViewById(R.id.btnSkip);
         tabLayout = findViewById(R.id.tabLayout);
 
+        //FIX: Make sure Skip button is ALWAYS clickable
+        btnSkip.bringToFront();
+        btnSkip.invalidate();
+        btnSkip.requestLayout();
+
         OnboardingAdapter adapter = new OnboardingAdapter(this);
         viewPager.setAdapter(adapter);
 

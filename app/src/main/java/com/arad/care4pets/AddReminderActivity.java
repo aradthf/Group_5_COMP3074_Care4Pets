@@ -1,32 +1,116 @@
 package com.arad.care4pets;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class AddReminderActivity extends AppCompatActivity {
+
+    private TextInputEditText etTitle;
+    private TextInputEditText etDate;
+    private TextInputEditText etTime;
+    private TextInputEditText etNotes;
+    private SwitchMaterial switchRepeat;
+    private MaterialButtonToggleGroup toggleButtonPriority;
+
+    private final Calendar calendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder);
 
-        EditText etTitle = findViewById(R.id.etReminderTitle);
-        EditText etType = findViewById(R.id.etReminderType);
-        EditText etDate = findViewById(R.id.etReminderDate);
+        etTitle = findViewById(R.id.etReminderTitle);
+        etDate = findViewById(R.id.etReminderDate);
+        etTime = findViewById(R.id.etReminderTime);
+        etNotes = findViewById(R.id.etNotes);
+        switchRepeat = findViewById(R.id.switchRepeat);
+        toggleButtonPriority = findViewById(R.id.toggleButtonPriority);
         Button btnSave = findViewById(R.id.btnSaveReminder);
+        findViewById(R.id.btnBack).setOnClickListener(v -> finish());
 
-        btnSave.setOnClickListener(v -> {
+        etDate.setOnClickListener(v -> showDatePicker());
+        etTime.setOnClickListener(v -> showTimePicker());
+
+        btnSave.setOnClickListener(v -> saveReminder());
+
+        // Set a default priority
+        toggleButtonPriority.check(R.id.btnLow);
+    }
+
+    private void showDatePicker() {
+        new DatePickerDialog(
+                this,
+                (view, year, month, dayOfMonth) -> {
+                    calendar.set(Calendar.YEAR, year);
+                    calendar.set(Calendar.MONTH, month);
+                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    updateDateInView();
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+        ).show();
+    }
+
+    private void showTimePicker() {
+        new TimePickerDialog(
+                this,
+                (view, hourOfDay, minute) -> {
+                    calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    calendar.set(Calendar.MINUTE, minute);
+                    updateTimeInView();
+                },
+                calendar.get(Calendar.HOUR_OF_DAY),
+                calendar.get(Calendar.MINUTE),
+                false
+        ).show();
+    }
+
+    private void updateDateInView() {
+        String myFormat = "MM/dd/yy"; // In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        etDate.setText(sdf.format(calendar.getTime()));
+    }
+
+    private void updateTimeInView() {
+        String myFormat = "hh:mm a"; // In which you need put here
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        etTime.setText(sdf.format(calendar.getTime()));
+    }
+
+    private void saveReminder() {
         String title = etTitle.getText().toString().trim();
-        String type = etType.getText().toString().trim();
         String date = etDate.getText().toString().trim();
+        String time = etTime.getText().toString().trim();
+        String notes = etNotes.getText().toString().trim();
 
-        if (title.isEmpty() || type.isEmpty() || date.isEmpty()) {
-            Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show();
+        if (title.isEmpty() || date.isEmpty() || time.isEmpty()) {
+            Toast.makeText(this, "Please fill all required fields", Toast.LENGTH_SHORT).show();
             return;
         }
+
+        int priorityButtonId = toggleButtonPriority.getCheckedButtonId();
+        String priority = "Low"; // Default
+        if (priorityButtonId == R.id.btnMedium) {
+            priority = "Medium";
+        } else if (priorityButtonId == R.id.btnHigh) {
+            priority = "High";
+        }
+
+        boolean repeat = switchRepeat.isChecked();
 
         int newId = 1;
         if (!FakeRepository.reminders.isEmpty()) {
@@ -38,9 +122,13 @@ public class AddReminderActivity extends AppCompatActivity {
             }
             newId = maxId + 1;
         }
-        FakeRepository.reminders.add(new Reminder(newId, title, date, type));
-        Toast.makeText(this, "Reminder added", Toast.LENGTH_SHORT).show();
+
+        String dateTime = date + " " + time;
+
+        // The `type` can be the priority, or you can add a new field to the Reminder class
+        FakeRepository.reminders.add(new Reminder(newId, title, dateTime, priority));
+
+        Toast.makeText(this, "Reminder created", Toast.LENGTH_SHORT).show();
         finish();
-    });
     }
 }

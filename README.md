@@ -68,23 +68,27 @@ The goal of Prototype 2 is to deliver improved UI, screen navigation, and basic 
 
 ## 👩‍💻 Team Responsibilities
 
-### **Najnin – UX / Onboarding**
-- Improved onboarding UI  
-- Updated Figma texts  
-- Navigation logic (Next / Skip → Login)  
-- UI color/spacing refinements  
+### **Najnin – Onboarding + Splash + navigation flow**
+Make splash → onboarding → login work smoothly.
+Store a flag “first time user?” 
 
-### **Shaheer – Pet Management UI**
-- My Pets layout screen  
-- Dummy data list  
-- Styling of card components  
 
-### **Niaj – Reminders UI**
-- Reminders screen design  
-- Connected dashboard button  
-- Added static reminder entries  
+### **Arad – Login + Signup**
+Dummy credentials or simple “local user” model.
+On successful login → go to Dashboard.
 
-### **Brian – Health & Care Instructions**
-- Health records screen  
-- Care instructions layout  
-- Static data population  
+
+### **Shaheer – Dashboard + Pets list**
+Dashboard cards navigate correctly.
+PetsList shows data from Repository.
+
+
+### **Niaj – Pet profile + Health records**
+Show selected pet details.
+Simple list of health records.
+
+
+### **Brian – Reminders + Care instructions**
+List of reminders.
+Ability to add a new reminder 
+Static care tips text screen.
