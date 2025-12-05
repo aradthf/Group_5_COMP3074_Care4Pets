@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="24dp"
     android:orientation="vertical"
     android:background="#F7FDFB">
@@ -25,38 +26,58 @@
         android:layout_height="wrap_content"/>
 
     <!-- Dummy record -->
-    <LinearLayout
+<!--    <LinearLayout-->
+<!--        android:layout_below="@id/tvTitleHealthRecords"-->
+<!--        android:background="@drawable/bg_card_gradient"-->
+<!--        android:padding="20dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:text="@string/record_type_dummy"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textColor="#1F2B3A"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--        <TextView-->
+<!--            android:text="@string/last_visit_dummy"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:textColor="#445566"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+<!--    </LinearLayout>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btnAddHealthRecord"-->
+<!--        style="@style/PrimaryButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:text="@string/add_health_record_btn" />-->
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHealthRecords"
         android:layout_below="@id/tvTitleHealthRecords"
-        android:background="@drawable/bg_card_gradient"
-        android:padding="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="16dp"
-        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent" />
 
-        <TextView
-            android:text="@string/record_type_dummy"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="#1F2B3A"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:text="@string/last_visit_dummy"
-            android:layout_marginTop="6dp"
-            android:textColor="#445566"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnAddHealthRecord"
-        style="@style/PrimaryButton"
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddHealthRecord"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="@string/add_health_record_btn" />
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/colorAccent"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 </RelativeLayout>
